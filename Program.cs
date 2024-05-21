@@ -17,12 +17,12 @@ do
     Console.WriteLine("Cociente (/)");
     Console.WriteLine("Mostrar valor Actual (M)");
     Console.WriteLine("Limpiar Valores (L)");
-    
+
     do
     {
         ingreso = Console.ReadLine();
         confirmacion = char.TryParse(ingreso, out operacion);
-        if (operacion != '+' && operacion != '-' && operacion != '*' && operacion != '/' && operacion != 'L')
+        if (operacion != '+' && operacion != '-' && operacion != '*' && operacion != '/' && operacion != 'L' && operacion != 'M')
         {
             Console.WriteLine("Solo se pueden usar estas 4 operaciones.");
             confirmacion = false;
@@ -60,11 +60,11 @@ do
             break;
 
         case 'M':
-            Console.WriteLine("El resultado actual es " + NuevaCalculadora.Resultado());
+            Console.WriteLine($"El resultado actual es {NuevaCalculadora.Resultado}");
             break;
 
         case 'L':
-            NuevaCalculadora.Limpiar(numero);
+            NuevaCalculadora.Limpiar();
             break;
     }
 
