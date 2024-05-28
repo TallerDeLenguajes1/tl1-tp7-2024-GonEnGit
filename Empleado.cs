@@ -12,19 +12,26 @@ public class Empleado
     {
         apellido = valor;
     }
-    private string Nacimiento = new DateTime(); // revisa los date time
+    private DateTime Nacimiento = new DateTime(); // revisa los date time
+    public void obtenerNacimiento(DateTime valor)
+    {
+        
+    }
     private char estadoCivil;
     public void guardarEstado(char valor)
     {
         estadoCivil = valor;
     }
-    private string ingresoAEmpresa = new DateTime();
+    private DateTime ingresoAEmpresa = new DateTime();
+    public void obtenerIngreso(DateTime valor)
+    {
+        ingresoAEmpresa = valor;
+    }
     private double sueldoBasico;
     public void guardarSueldo(double valor)
     {
         sueldoBasico = valor;
     }
     private enum Cargo { Auxiliar, Administrativo, Ingeniero, Especialista, Investigador, }
-
 
 }
