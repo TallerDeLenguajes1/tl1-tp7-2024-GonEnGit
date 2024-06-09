@@ -1,37 +1,28 @@
 namespace EspacioEmpleado;
 
-public class Empleado
+public partial class Empleado
 {
     private string nombre;
-    public void guardarNombre(string valor)
-    {
-        nombre = valor;
-    }
     private string apellido;
-    public void guardarApellido(string valor)
-    {
-        apellido = valor;
-    }
-    private DateTime Nacimiento = new DateTime(); // revisa los date time
-    public void obtenerNacimiento(DateTime valor)
-    {
-        
-    }
+    private DateTime nacimiento; // revisa los date time
     private char estadoCivil;
-    public void guardarEstado(char valor)
-    {
-        estadoCivil = valor;
-    }
-    private DateTime ingresoAEmpresa = new DateTime();
-    public void obtenerIngreso(DateTime valor)
-    {
-        ingresoAEmpresa = valor;
-    }
+    private DateTime ingresoAEmpresa;
     private double sueldoBasico;
-    public void guardarSueldo(double valor)
-    {
-        sueldoBasico = valor;
-    }
-    private enum Cargo { Auxiliar, Administrativo, Ingeniero, Especialista, Investigador, }
+    private cargo cargoDelEmpleado;
+
+    public string Nombre { get => nombre; set => nombre = value; }
+    public string Apellido { get => apellido; set => apellido = value; }
+    public DateTime Nacimiento { get => nacimiento; set => nacimiento = value; }
+    public char EstadoCivil { get => estadoCivil; set => estadoCivil = value; }
+    public DateTime IngresoAEmpresa { get => ingresoAEmpresa; set => ingresoAEmpresa = value; }
+    public double SueldoBasico { get => sueldoBasico; set => sueldoBasico = value; }
+    public cargo CargoDelEmpleado { get => cargoDelEmpleado; set => cargoDelEmpleado = value; }
+
+    public enum cargo { 
+        Auxiliar, 
+        Administrativo, 
+        Ingeniero, 
+        Especialista, 
+        Investigador, }
 
 }
