@@ -29,36 +29,10 @@ do
         }
     } while (!confirmacion);
 
-    Console.WriteLine("Ingrese un valor a usar: ");
-    do
+    if (operacion == 'L' || operacion == 'M')
     {
-        ingreso = Console.ReadLine();
-        confirmacion = double.TryParse(ingreso, out numero);
-        if (!confirmacion)
+        switch (operacion)
         {
-            Console.WriteLine("Ingrese unicamente numeros.");
-        }
-    } while (!confirmacion);
-
-
-    switch (operacion)
-    {
-        case '+':
-            NuevaCalculadora.Sumar(numero);
-            break;
-
-        case '-':
-            NuevaCalculadora.Restar(numero);
-            break;
-        
-        case '*':
-            NuevaCalculadora.Multiplicar(numero);
-            break;
-
-        case '/':
-            NuevaCalculadora.Dividir(numero);
-            break;
-
         case 'M':
             Console.WriteLine($"El resultado actual es {NuevaCalculadora.Resultado}");
             break;
@@ -66,6 +40,40 @@ do
         case 'L':
             NuevaCalculadora.Limpiar();
             break;
+        }
+    }
+    else
+    {
+        Console.WriteLine("Ingrese un valor a usar: ");
+        do
+        {
+            ingreso = Console.ReadLine();
+            confirmacion = double.TryParse(ingreso, out numero);
+            if (!confirmacion)
+            {
+                Console.WriteLine("Ingrese unicamente numeros.");
+            }
+        } while (!confirmacion);
+
+        switch (operacion)
+        {
+            case '+':
+                NuevaCalculadora.Sumar(numero);
+                break;
+
+            case '-':
+                NuevaCalculadora.Restar(numero);
+                break;
+            
+            case '*':
+                NuevaCalculadora.Multiplicar(numero);
+                break;
+
+            case '/':
+                NuevaCalculadora.Dividir(numero);
+                break;
+
+        }
     }
 
     do
